@@ -1,4 +1,4 @@
-package se.citerus.scala.sampleapp
+package se.citerus.scala.sampleapp.service
 
 import org.scalatest._
 import org.scalatest.concurrent._
@@ -32,7 +32,7 @@ class WordServiceImplTest extends FunSuite with Matchers with Eventually {
   test("picking a random adjective on a specific letter") {
     val adjectives = (for (i <- 1 to 1000) yield service.randomAdjective(Some('a')).get).toSet
     adjectives should contain allOf("angry", "able")
-    adjectives should not contain ("cheating")
+    adjectives should not contain "cheating"
   }
 
   test("picking a random adjective on a specific letter that does not exist returns None") {

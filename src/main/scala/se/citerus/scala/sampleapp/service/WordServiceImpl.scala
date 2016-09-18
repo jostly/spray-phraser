@@ -1,6 +1,6 @@
-package se.citerus.scala.sampleapp
+package se.citerus.scala.sampleapp.service
 
-import util.Random
+import scala.util.Random
 
 trait WordServiceImpl extends WordService {
 

@@ -1,16 +1,17 @@
-package se.citerus.scala.sampleapp
+package se.citerus.scala.sampleapp.infrastructure
 
 import akka.actor.{ActorSystem, Props}
 import akka.io.IO
-import spray.can.Http
 import akka.pattern.ask
 import akka.util.Timeout
+import spray.can.Http
+
 import scala.concurrent.duration._
 
 object Boot extends App {
 
   // we need an ActorSystem to host our application in
-  implicit val system = ActorSystem("on-spray-can")
+  implicit val system = ActorSystem("spray-phraser")
 
   // create and start our service actor
   val service = system.actorOf(Props[NamingActor], "naming-service")
